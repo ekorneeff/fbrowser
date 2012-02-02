@@ -1,0 +1,19 @@
+%h4=@path
+%table.table-condensed.table-striped
+  - unless @path == "/"
+    %tr
+      %td
+        - puts "|#{File.expand_path("..",@path)}|"
+        %a{ :href => url("browse#{File.expand_path("..",@path)}")} ..
+  - @content.each do |f|
+    %tr
+      %td
+        -# puts "#{settings.default_dir}#{@path}/#{f}"
+        - if File.directory? "#{settings.default_dir}#{@path}/#{f}"
+          - unless File.expand_path("..",@path) == "/" && @path == "/"
+            %a{ :href => url("browse#{@path}/#{f}") }=f
+          - else
+            %a{ :href => url("browse#{@path}#{f}") }=f
+
+        - else
+          = f

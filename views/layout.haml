@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}
+    %meta{:name => "lang", :content => "ru"}
+    %title Unreal File Browser
+    %link{:href=>'/stylesheets/bootstrap.min.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %link{:href=>'/screen.css', :media => "screen", :rel => 'stylesheet', :type => "text/css"}
+    %script{:type => "text/javascript", :src => "http://yandex.st/jquery/1.7.1/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/application.js"}
+    
+  %body
+    .container-fluid
+      = yield
